@@ -2,7 +2,7 @@ const plants = [
     {
         id: 1,
         name: "Aloe Vera",
-        img: "./assets/aloe_vera.jpg",
+        img: "./assets/img/aloe_vera.jpg",
         description: "Planta suculenta conocida por sus propiedades curativas.",
         price: 150,
         stock: 20,
@@ -10,7 +10,7 @@ const plants = [
     {
         id: 2,
         name: "Cactus San Pedro",
-        img: "./assets/cactus_san_pedro.jpg",
+        img: "./assets/img/cactus_san_pedro.jpg",
         description: "Cactus de crecimiento rápido originario de los Andes.",
         price: 300,
         stock: 15,
@@ -18,7 +18,7 @@ const plants = [
     {
         id: 3,
         name: "Helecho Boston",
-        img: "./assets/helecho_boston.jpg",
+        img: "./assets/img/helecho_boston.jpg",
         description: "Planta colgante con hojas frondosas y verdes.",
         price: 200,
         stock: 25,
@@ -26,7 +26,7 @@ const plants = [
     {
         id: 4,
         name: "Orquídea Phalaenopsis",
-        img: "./assets/orquidea_phalaenopsis.jpg",
+        img: "./assets/img/orquidea_phalaenopsis.jpg",
         description: "Flor elegante y duradera, ideal para interiores.",
         price: 500,
         stock: 10,
@@ -34,7 +34,7 @@ const plants = [
     {
         id: 5,
         name: "Bonsái Ficus",
-        img: "./assets/bonsai_ficus.jpg",
+        img: "./assets/img/bonsai_ficus.jpg",
         description: "Árbol miniatura perfecto para decorar espacios pequeños.",
         price: 750,
         stock: 8,
@@ -42,7 +42,7 @@ const plants = [
     {
         id: 6,
         name: "Suculenta Echeveria",
-        img: "./assets/echeveria.jpg",
+        img: "./assets/img/echeveria.jpg",
         description: "Planta resistente de hojas carnosas y colores variados.",
         price: 100,
         stock: 30,
@@ -50,7 +50,7 @@ const plants = [
     {
         id: 7,
         name: "Palma Areca",
-        img: "./assets/palma_areca.jpg",
+        img: "./assets/img/palma_areca.jpg",
         description: "Planta tropical que purifica el aire de forma natural.",
         price: 400,
         stock: 12,
@@ -58,7 +58,7 @@ const plants = [
     {
         id: 8,
         name: "Lavanda",
-        img: "./assets/lavanda.jpg",
+        img: "./assets/img/lavanda.jpg",
         description: "Hierba aromática conocida por su fragancia relajante.",
         price: 180,
         stock: 22,
@@ -66,7 +66,7 @@ const plants = [
     {
         id: 9,
         name: "Menta",
-        img: "./assets/menta.jpg",
+        img: "./assets/img/menta.jpg",
         description: "Planta aromática perfecta para tés y cócteles.",
         price: 80,
         stock: 35,
@@ -74,7 +74,7 @@ const plants = [
     {
         id: 10,
         name: "Hierba de Limón",
-        img: "./assets/hierba_limon.jpg",
+        img: "./assets/img/hierba_limon.jpg",
         description: "Planta cítrica ideal para infusiones y cocina.",
         price: 120,
         stock: 28,
@@ -82,7 +82,7 @@ const plants = [
     {
         id: 11,
         name: "Calathea Orbifolia",
-        img: "./assets/calathea_orbifolia.jpg",
+        img: "./assets/img/calathea_orbifolia.jpg",
         description: "Planta con hojas grandes y rayadas, de interior.",
         price: 350,
         stock: 10,
@@ -90,7 +90,7 @@ const plants = [
     {
         id: 12,
         name: "Monstera Deliciosa",
-        img: "./assets/monstera_deliciosa.jpg",
+        img: "./assets/img/monstera_deliciosa.jpg",
         description: "Planta exótica con hojas perforadas y gran tamaño.",
         price: 600,
         stock: 7,
@@ -98,7 +98,7 @@ const plants = [
     {
         id: 13,
         name: "Potus",
-        img: "./assets/potus.jpg",
+        img: "./assets/img/potus.jpg",
         description: "Planta trepadora de fácil cuidado y gran belleza.",
         price: 130,
         stock: 25,
@@ -106,7 +106,7 @@ const plants = [
     {
         id: 14,
         name: "Agave Azul",
-        img: "./assets/agave_azul.jpg",
+        img: "./assets/img/agave_azul.jpg",
         description: "Planta suculenta conocida por ser base del tequila.",
         price: 200,
         stock: 18,
@@ -114,7 +114,7 @@ const plants = [
     {
         id: 15,
         name: "Rosa Roja",
-        img: "./assets/rosa_roja.jpg",
+        img: "./assets/img/rosa_roja.jpg",
         description: "Flor clásica que simboliza el amor y la pasión.",
         price: 50,
         stock: 40,
@@ -122,7 +122,7 @@ const plants = [
     {
         id: 16,
         name: "Clavel",
-        img: "./assets/clavel.jpg",
+        img: "./assets/img/clavel.jpg",
         description: "Flor resistente y colorida, popular en jardines.",
         price: 70,
         stock: 32,
@@ -130,7 +130,7 @@ const plants = [
     {
         id: 17,
         name: "Hiedra Inglesa",
-        img: "./assets/hiedra_inglesa.jpg",
+        img: "./assets/img/hiedra_inglesa.jpg",
         description: "Planta trepadora ideal para cubrir muros.",
         price: 150,
         stock: 20,
@@ -138,7 +138,7 @@ const plants = [
     {
         id: 18,
         name: "Crotón",
-        img: "./assets/croton.jpg",
+        img: "./assets/img/croton.jpg",
         description: "Planta de hojas multicolores y apariencia tropical.",
         price: 250,
         stock: 14,
@@ -146,7 +146,7 @@ const plants = [
     {
         id: 19,
         name: "Geranio",
-        img: "./assets/geranio.jpg",
+        img: "./assets/img/geranio.jpg",
         description: "Planta con flores vibrantes y fácil de cuidar.",
         price: 100,
         stock: 27,
@@ -154,7 +154,7 @@ const plants = [
     {
         id: 20,
         name: "Hierbabuena",
-        img: "./assets/hierbabuena.jpg",
+        img: "./assets/img/hierbabuena.jpg",
         description: "Planta aromática utilizada en recetas y bebidas.",
         price: 90,
         stock: 30,
