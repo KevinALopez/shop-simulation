@@ -1,20 +1,18 @@
 main {
     max-width: 64rem;
     margin: 0 auto;
-    padding-top: 2rem;
-    transition: transform 1s ease-in-out;
-
-    display: grid;
-    grid-template-columns: 1fr;
+    padding-top: 1rem;
 
     section {
-        margin: 0.5rem;
-        padding: 0.4rem;
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-        border-radius: 0.35rem;
-        transition: transform 0.3s ease-in-out;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1rem;
 
-        div {
+        article {
+            margin: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+            border-radius: 0.35rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -29,7 +27,6 @@ main {
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
-                pointer-events: none;
 
                 width: 100%;
 
@@ -46,8 +43,6 @@ main {
             }
 
             div {
-                pointer-events: none;
-
                 p {
                     text-align: center;
                 }
@@ -61,7 +56,6 @@ main {
                 background-color: rgb(28, 150, 28);
                 color: #fff;
                 cursor: pointer;
-                transition: transform 0.3s ease-in-out;
 
                 &:hover {
                     background-color: rgb(31, 194, 31);
@@ -70,19 +64,18 @@ main {
                 span {
                     font-weight: 600;
                     font-size: 0.9rem;
-                    pointer-events: none;
                 }
             }
-        }
-    }
 
-    :hover {
-        transform: scale(1.02);
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
     }
 }
 
 @media screen and (min-width: 768px) {
-    main {
+    main section {
         grid-template-columns: repeat(3, 1fr);
     }
 }
