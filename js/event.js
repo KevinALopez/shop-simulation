@@ -4,7 +4,10 @@ const shoppingCartList = document.querySelector(".shopping-cart ul");
 const shoppingCartIcon = document.querySelector("#cart-icon");
 const cartTotal = document.querySelector(".shopping-cart p span");
 const emptyCartButton = document.querySelector(
-    ".shopping-cart button:first-child"
+    ".shopping-cart div button:first-child"
+);
+const buyCartButton = document.querySelector(
+    ".shopping-cart div button:last-child"
 );
 
 let isCartOpen = false;
@@ -45,6 +48,21 @@ function toggleCart() {
     }
 }
 
+function printAllCartItems(dom) {
+    dom.innerHTML = "";
+    cart.forEach((item) => printCartItem(item, dom));
+}
+
+function updateTotal() {
+    printAllCartItems(shoppingCartList);
+    const total = cart.reduce(
+        (sum, plant) => sum + plant.price * plant.quantity,
+        0
+    );
+
+    cartTotal.innerHTML = total;
+}
+
 function addQuantityOnPlant(event) {
     const plantId = parseInt(event.target.dataset.plantId);
 
@@ -55,6 +73,8 @@ function addQuantityOnPlant(event) {
     const indexOfPlant = cart.findIndex((item) => item.id === plantId);
 
     cart[indexOfPlant].quantity += 1;
+
+    updateTotal();
 }
 
 function substractQuantityOnPlant(event) {
@@ -68,10 +88,12 @@ function substractQuantityOnPlant(event) {
 
     if (cart[indexOfPlant].quantity === 1) {
         cart.splice(indexOfPlant, 1);
+        updateTotal();
         return;
     }
 
     cart[indexOfPlant].quantity -= 1;
+    updateTotal();
 }
 
 function removePlantFromCart(event) {
@@ -115,11 +137,6 @@ function printCartItem(item, dom) {
     dom.appendChild(li);
 }
 
-function printAllCartItems(dom) {
-    dom.innerHTML = "";
-    cart.forEach((item) => printCartItem(item, dom));
-}
-
 function addPlantToCart(event) {
     const plantId = parseInt(event.target.dataset.plantId);
     const plant = getPlantById(plantId);
@@ -146,22 +163,21 @@ function addPlantToCart(event) {
     updateTotal();
 }
 
-function updateTotal() {
-    printAllCartItems(shoppingCartList);
-    const total = cart.reduce(
-        (sum, plant) => sum + plant.price * plant.quantity,
-        0
-    );
-
-    cartTotal.innerHTML = total;
-}
-
 function emptyCart() {
     cart = [];
+
+    shoppingCartList.innerHTML = "";
     cartTotal.innerHTML = 0;
 }
 
-function buyCart(event) {}
+function buyCart(event) {
+    if (cart.length === 0) {
+        alert("El carrito esta vaco");
+        return;
+    }
+
+    alert("Gracias por su compra!");
+}
 
 function printOnePlant(plant, dom) {
     const article = document.createElement("article");
@@ -196,3 +212,4 @@ printAllPlants(plants, gridSection);
 
 shoppingCartIcon.addEventListener("click", toggleCart);
 emptyCartButton.addEventListener("click", emptyCart);
+buyCartButton.addEventListener("click", buyCart);
