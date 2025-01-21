@@ -1,7 +1,36 @@
-const section = document.querySelector("main section");
+const gridSection = document.querySelector("main section");
+const shoppingCart = document.querySelector(".shopping-cart");
+const shoppingCartIcon = document.querySelector("#cart-icon");
+
+let isCartOpen = false;
+
+/**
+ * CART FUNCTIONS
+ */
+function showCart() {
+    if (isCartOpen) {
+        shoppingCart.style.left = "-25rem";
+        isCartOpen = false;
+    } else {
+        shoppingCart.style.left = "-0.5rem";
+        isCartOpen = true;
+    }
+}
 
 function addPlantToCart(event) {}
 
+function removePlantFromCart(event) {}
+
+function emptyCart(event) {}
+
+function buyCart(event) {}
+/**
+ * CART FUNCTIONS
+ */
+
+/**
+ * PRINT FUNCTIONS
+ */
 function printOnePlant(plant, dom) {
     const article = document.createElement("article");
 
@@ -29,5 +58,9 @@ function printAllPlants(plantsArr, dom) {
         printOnePlant(plant, dom);
     });
 }
+/**
+ * PRINT FUNCTIONS
+ */
 
-printAllPlants(plants, section);
+shoppingCartIcon.addEventListener("click", showCart);
+printAllPlants(plants, gridSection);
