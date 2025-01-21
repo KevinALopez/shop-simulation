@@ -180,3 +180,5 @@ const plants = [
         stock: 30,
     },
 ];
+
+const cart = [];
