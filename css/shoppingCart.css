@@ -1,13 +1,13 @@
 .shopping-cart {
     position: fixed;
     z-index: 1;
-    bottom: 0;
+    bottom: -15rem;
     left: translateX(50%); /*-20rem to hide*/
     background-color: #fff;
     padding: 1rem;
     margin: 1rem;
     box-shadow: 1px 1px 1rem rgba(0, 0, 0, 0.2);
-    transition: left 0.5s ease-in-out;
+    transition: left 0.5s ease-in-out, bottom 0.5s ease-in-out;
 
     display: flex;
     flex-direction: column;
