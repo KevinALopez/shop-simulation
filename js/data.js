@@ -181,4 +181,4 @@ const plants = [
     },
 ];
 
-const cart = [];
+let cart = [];
