@@ -184,7 +184,6 @@ const plants = [
 const elementsPerPage = 6;
 
 const pagesArr = [];
-let currentPage = 1;
 
 plants.forEach((plant, index) => {
     if (index % elementsPerPage === 0) {
@@ -204,6 +203,8 @@ plants.forEach((plant, index) => {
         pagesArr.push(page);
     }
 });
+
+currentPageId = 1;
 
 console.log(pagesArr);
 
