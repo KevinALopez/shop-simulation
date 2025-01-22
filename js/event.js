@@ -9,6 +9,7 @@ const emptyCartButton = document.querySelector(
 const buyCartButton = document.querySelector(
     ".shopping-cart div button:last-child"
 );
+const pagesNav = document.querySelector(".paginas-nav");
 
 let isCartOpen = false;
 
@@ -163,6 +164,8 @@ function buyCart(event) {
     alert("Gracias por su compra!");
 }
 
+function printPagesNav(dom) {}
+
 function printOnePlant(plant, dom) {
     const article = document.createElement("article");
 
@@ -187,6 +190,8 @@ function printOnePlant(plant, dom) {
 }
 
 function printAllPlants(plantsArr, dom) {
+    dom.innerHTML = "";
+
     plantsArr.forEach((plant) => {
         printOnePlant(plant, dom);
     });

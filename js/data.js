@@ -181,4 +181,30 @@ const plants = [
     },
 ];
 
+const elementsPerPage = 6;
+
+const pagesArr = [];
+let currentPage = 1;
+
+plants.forEach((plant, index) => {
+    if (index % elementsPerPage === 0) {
+        const page = {
+            pageId: Math.floor(index / elementsPerPage) + 1,
+            items: plants.slice(index, index + elementsPerPage),
+            previousPage:
+                Math.floor(index / elementsPerPage) === 0
+                    ? null
+                    : Math.floor(index / elementsPerPage),
+            nextPage:
+                index + elementsPerPage <= plants.length - 1
+                    ? Math.floor(index / elementsPerPage) + 2
+                    : null,
+        };
+
+        pagesArr.push(page);
+    }
+});
+
+console.log(pagesArr);
+
 let cart = [];
