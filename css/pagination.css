@@ -1,0 +1,59 @@
+.paginas-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0.5rem auto;
+
+    > ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        li {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            color: black;
+            cursor: pointer;
+
+            a {
+                color: inherit;
+                display: block;
+                width: 100%;
+                height: auto;
+                font-weight: bold;
+                font-size: 1.25rem;
+            }
+
+            &:hover {
+                background-color: rgb(28, 150, 28);
+                color: #fff;
+            }
+        }
+    }
+
+    > button {
+        color: rgb(28, 150, 28);
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        background: none;
+        cursor: pointer;
+        font-size: 1.25rem;
+        font-weight: bold;
+
+        &:hover {
+            color: #fff;
+            background-color: rgb(28, 150, 28);
+        }
+    }
+}
+
+.paginas-nav .active {
+    background-color: rgb(28, 150, 28);
+
+    a {
+        color: #fff;
+    }
+}
