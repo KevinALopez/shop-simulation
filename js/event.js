@@ -64,11 +64,7 @@ function updateTotal() {
 }
 
 function addQuantityOnPlant(event) {
-    const plantId = parseInt(event.target.dataset.plantId);
-
-    if (plantId === undefined) {
-        return;
-    }
+    const plantId = parseInt(event.target.dataset.id);
 
     const indexOfPlant = cart.findIndex((item) => item.id === plantId);
 
@@ -78,11 +74,7 @@ function addQuantityOnPlant(event) {
 }
 
 function substractQuantityOnPlant(event) {
-    const plantId = parseInt(event.target.dataset.plantId);
-
-    if (plantId === undefined) {
-        return;
-    }
+    const plantId = parseInt(event.currentTarget.dataset.id);
 
     const indexOfPlant = cart.findIndex((item) => item.id === plantId);
 
@@ -97,11 +89,7 @@ function substractQuantityOnPlant(event) {
 }
 
 function removePlantFromCart(event) {
-    const plantId = parseInt(event.target.dataset.plantId);
-
-    if (plantId === undefined) {
-        return;
-    }
+    const plantId = parseInt(event.currentTarget.dataset.id);
 
     cart = cart.filter((item) => item.id !== plantId);
 
@@ -117,17 +105,17 @@ function printCartItem(item, dom) {
 
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = "Eliminar";
-    deleteButton.dataset.plantId = item.id;
+    deleteButton.dataset.id = item.id;
     deleteButton.addEventListener("click", removePlantFromCart);
 
     const addButton = document.createElement("button");
     addButton.innerHTML = "+";
-    addButton.dataset.plantId = item.id;
+    addButton.dataset.id = item.id;
     addButton.addEventListener("click", addQuantityOnPlant);
 
     const substractButton = document.createElement("button");
     substractButton.innerHTML = "-";
-    substractButton.dataset.plantId = item.id;
+    substractButton.dataset.id = item.id;
     substractButton.addEventListener("click", substractQuantityOnPlant);
 
     buttons.append(deleteButton, addButton, substractButton);
@@ -138,12 +126,8 @@ function printCartItem(item, dom) {
 }
 
 function addPlantToCart(event) {
-    const plantId = parseInt(event.target.dataset.plantId);
+    const plantId = parseInt(event.currentTarget.dataset.id);
     const plant = getPlantById(plantId);
-
-    if (plant === undefined) {
-        return;
-    }
 
     const indexOfPlant = cart.findIndex((item) => item.id === plant.id);
 
@@ -183,7 +167,7 @@ function printOnePlant(plant, dom) {
     const article = document.createElement("article");
 
     const button = document.createElement("button");
-    button.dataset.plantId = plant.id;
+    button.dataset.id = plant.id;
 
     button.innerHTML = `<span> Agregar al carrito </span>`;
     button.addEventListener("click", addPlantToCart);
