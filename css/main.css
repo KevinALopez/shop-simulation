@@ -87,6 +87,15 @@ main {
     }
 }
 
+.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+
+    &:hover {
+        background-color: gray;
+    }
+}
+
 @media screen and (min-width: 768px) {
     main section {
         grid-template-columns: repeat(2, 1fr);

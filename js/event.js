@@ -66,11 +66,22 @@ function updateTotal() {
 
 function addQuantityOnPlant(event) {
     const plantId = parseInt(event.target.dataset.id);
+    const indexOfPlantOnCart = cart.findIndex((item) => item.id === plantId);
+    const indexOfPlantOnInventory = plants.findIndex(
+        (item) => item.id === plantId
+    );
 
-    const indexOfPlant = cart.findIndex((item) => item.id === plantId);
+    if (
+        cart[indexOfPlantOnCart].quantity ===
+        plants[indexOfPlantOnInventory].stock
+    ) {
+        alert(
+            "Has alcanzado la cantidad maxima disponible para este producto."
+        );
+        return;
+    }
 
-    cart[indexOfPlant].quantity += 1;
-
+    cart[indexOfPlantOnCart].quantity += 1;
     updateTotal();
 }
 
@@ -235,7 +246,13 @@ function printOnePlant(plant, dom) {
     const button = document.createElement("button");
     button.dataset.id = plant.id;
 
-    button.innerHTML = `<span> Agregar al carrito </span>`;
+    button.innerHTML =
+        plant.stock === 0
+            ? `<span> Agotado </span>`
+            : `<span> Agregar al carrito </span>`;
+
+    button.disabled = plant.stock === 0;
+    button.className = plant.stock === 0 ? "disabled" : "";
     button.addEventListener("click", addPlantToCart);
 
     article.innerHTML = `<figure>

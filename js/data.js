@@ -6,7 +6,7 @@ const plants = [
         description:
             "Planta suculenta conocida por sus propiedades curativas. Lorem. Lorem.",
         price: 150,
-        stock: 20,
+        stock: 0,
     },
     {
         id: 2,
@@ -42,7 +42,7 @@ const plants = [
         description:
             "Árbol miniatura perfecto para decorar espacios pequeños. Lorem Lorem Lorem",
         price: 750,
-        stock: 8,
+        stock: 0,
     },
     {
         id: 6,
@@ -78,7 +78,7 @@ const plants = [
         description:
             "Planta aromática perfecta para tés y cócteles. Lorem Lorem. Lorem",
         price: 80,
-        stock: 35,
+        stock: 0,
     },
     {
         id: 10,
