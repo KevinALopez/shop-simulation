@@ -181,10 +181,13 @@ const plants = [
     },
 ];
 
+const pagesArr = [];
+// Cantidad de elementos por pagina
 const elementsPerPage = 6;
 
-const pagesArr = [];
-
+// Dividir la lista de plantas en páginas alamacenando las paginas en el array pagesArr
+// Se utiliza la logica de que el indice de la planta debe ser multiplo de la cantidad de elementos por pagina
+// Una vez alcanzado el indice correspondiente, se crea un objeto page y se agrega al array pagesArr
 plants.forEach((plant, index) => {
     if (index % elementsPerPage === 0) {
         const page = {
@@ -204,8 +207,7 @@ plants.forEach((plant, index) => {
     }
 });
 
+//Pagina actual que se usara para mostrar las plantas, se inicia en 1, que es la pagina incial
 currentPageId = 1;
-
-console.log(pagesArr);
 
 let cart = [];
