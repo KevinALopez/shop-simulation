@@ -142,3 +142,7 @@ a {
 ::-webkit-scrollbar {
     display: none;
 }
+
+input:focus::placeholder {
+    color: transparent;
+}

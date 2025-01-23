@@ -3,6 +3,57 @@ main {
     margin: 0 auto;
     padding-top: 1rem;
 
+    header {
+        color: black;
+        background-color: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 0.125rem auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 0.125rem auto;
+        }
+
+        .search {
+            margin: 0 auto;
+            max-width: 25rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+
+            input {
+                width: 100%;
+                padding: 0.25rem 0.75rem;
+                border-radius: 0.25rem;
+                font-size: 1.25rem;
+
+                &:focus {
+                    outline: none;
+                    border-color: rgb(28, 150, 28);
+                }
+            }
+        }
+    }
+
     section {
         display: grid;
         grid-template-columns: 1fr;
