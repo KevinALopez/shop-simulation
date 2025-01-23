@@ -10,6 +10,7 @@ const buyCartButton = document.querySelector(
     ".shopping-cart div button:last-child"
 );
 const pagesNav = document.querySelector(".paginas-nav");
+const searchBarInput = document.querySelector(".search input");
 
 let isCartOpen = false;
 
@@ -277,6 +278,26 @@ function printAllPlants(plantsArr, dom) {
     });
 }
 
+function filterPlants(event) {
+    pagesNav.style.display = "none";
+    const filter = event.target.value.toLowerCase();
+
+    if (filter === "") {
+        pagesNav.style.display = "flex";
+        printAllPlants(
+            pagesArr.find((page) => page.pageId === currentPageId).items,
+            gridSection
+        );
+        return;
+    }
+
+    const filteredPlants = plants.filter((plant) =>
+        plant.name.toLowerCase().includes(filter)
+    );
+
+    printAllPlants(filteredPlants, gridSection);
+}
+
 printPagesNav(pagesNav);
 
 printAllPlants(
@@ -287,3 +308,4 @@ printAllPlants(
 shoppingCartIcon.addEventListener("click", toggleCart);
 emptyCartButton.addEventListener("click", emptyCart);
 buyCartButton.addEventListener("click", buyCart);
+searchBarInput.addEventListener("input", filterPlants);
