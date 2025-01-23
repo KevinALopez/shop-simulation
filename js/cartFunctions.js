@@ -142,6 +142,10 @@ function addPlantToCart(event) {
     });
 
     updateTotal();
+
+    if (!isCartOpen) {
+        toggleCart();
+    }
 }
 
 function emptyCart() {
